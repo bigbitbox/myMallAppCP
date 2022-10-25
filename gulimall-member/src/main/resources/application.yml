@@ -1,4 +1,11 @@
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 45.145.231.133
+        port: 8848
+  application:
+    name: gulimall-member
   datasource:
     username: root
     password: root
@@ -11,3 +18,4 @@ mybatis-plus:
       id-type: auto
 server:
   port: 8000
+
