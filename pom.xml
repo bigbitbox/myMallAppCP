@@ -22,6 +22,7 @@
         <module>gulimall-product</module>
         <module>gulimall-ware</module>
         <module>renren-fast-master</module>
+        <module>gulimall-common</module>
     </modules>
 
 
