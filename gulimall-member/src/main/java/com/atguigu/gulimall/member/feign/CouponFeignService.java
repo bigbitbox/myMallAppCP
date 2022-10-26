@@ -4,9 +4,11 @@ import com.atguigu.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient("gulimall-coupon")
+//@FeignClient("localhost:7000")
+//@FeignClient("gulimall-coupon")
+@FeignClient(name = "custom",url = "http://localhost:7000")
 public interface CouponFeignService {
 
-    @RequestMapping("gulimall-coupon/coupon/coupon/member/list")
+    @RequestMapping("coupon/coupon/member/list")
     public R membercoupons();
 }

@@ -38,9 +38,9 @@ public class MemberController {
     public R test(){
         MemberEntity memberEntity = new MemberEntity();
         memberEntity.setNickname("张三");
-
+//
         R membercoupons = couponFeignService.membercoupons();
-
+//
         return R.ok().put("member",memberEntity).put("coupons",membercoupons.get("coupons"));
     };
 

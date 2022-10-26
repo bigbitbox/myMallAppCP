@@ -33,8 +33,8 @@ public class CouponController {
     @RequestMapping("/member/list")
     public R membercoupons(){
         CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减10");
-        System.out.println("hi");
+        couponEntity.setCouponName("满100减15");
+        System.out.println("hi1");
         return R.ok().put("coupons",Arrays.asList(couponEntity));
     }
     /**

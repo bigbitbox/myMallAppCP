@@ -2,7 +2,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 45.145.231.133
+#        server-addr: 45.145.231.133
+        server-addr: localhost
         port: 8848
   application:
     name: gulimall-member
