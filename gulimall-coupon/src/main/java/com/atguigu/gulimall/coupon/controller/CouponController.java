@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +26,21 @@ import com.atguigu.common.utils.R;
  * @email ungatz@hotmail.com
  * @date 2022-10-25 09:36:20
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${coupon.cacheName}")
+    private String cacheName;
+
+    @RequestMapping("test")
+    public R test(){
+        return R.ok().put("cacheName",cacheName);
+    }
+
 
     @RequestMapping("/member/list")
     public R membercoupons(){
