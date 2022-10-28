@@ -3,6 +3,7 @@ package com.atguigu.gulimall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -26,9 +27,9 @@ import com.atguigu.common.utils.R;
  * @email ungatz@hotmail.com
  * @date 2022-10-25 09:36:20
  */
-@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
+@RefreshScope
 public class CouponController {
     @Autowired
     private CouponService couponService;
@@ -36,9 +37,12 @@ public class CouponController {
     @Value("${coupon.cacheName}")
     private String cacheName;
 
+    @Value("${coupon.cacheAge}")
+    private String cacheAge;
+
     @RequestMapping("test")
     public R test(){
-        return R.ok().put("cacheName",cacheName);
+        return R.ok().put("cacheName",cacheName).put("cacheAge",cacheAge);
     }
 
 

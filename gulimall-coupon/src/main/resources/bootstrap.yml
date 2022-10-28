@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      config:
+#        server-addr: 45.145.231.133:8848
+        server-addr: localhost:8848
+        name: gulimallCoupon
