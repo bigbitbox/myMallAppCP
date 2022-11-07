@@ -5,13 +5,13 @@ spring:
         #        server-addr: 45.145.231.133:8848
         #        server-addr: localhost:8848
         server-addr: 139.159.142.252:8848
-        name: gulimallMember
+        name: gulimallOrder
         #        namespace: bb3dae98-84b0-438c-823e-0151b1ace267
         shared-configs:
           - data-id: mybatis.yml
             group: DEFAULT_GROUP
         extension-configs:
           - data-id: datasource.yml
-            group: member
+            group: order
           - data-id: NacosRegister.yml
-            group: member
+            group: order
