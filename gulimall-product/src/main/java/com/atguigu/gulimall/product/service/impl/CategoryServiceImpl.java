@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -34,8 +36,11 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         List<CategoryEntity> entities = baseMapper.selectList(null);
 
 //        2.组装成父子的树型结构
+        List<CategoryEntity> level1Menus = entities.stream().filter(categoryEntity ->
+             categoryEntity.getParentCid() == 0
+        ).collect(Collectors.toList());
 
-        return entities;
+        return level1Menus;
     }
 
 }
